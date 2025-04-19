@@ -72,5 +72,13 @@ int main()
   printf("PIB: %.2f bilhões de reais\n", pib2);
   printf("Número de Pontos Turísticos: %d\n", pontosTuristicos2);
 
+  // Calculando a densidade populacional e PIB per apita de cada carta
+
+  float densidadePopulacional1 = populacao1 / area1;
+  float densidadePopulacional2 = populacao2 / area2;
+
+  printf("\nDensidade Populacional da carta 1: %.2f", densidadePopulacional1);
+  printf("\nDensidade populacional da carta 2: %.2f", densidadePopulacional2);
+
   return 0; // Retorna 0 para o sistema operacional
 }
