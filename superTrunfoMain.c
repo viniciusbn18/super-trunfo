@@ -7,9 +7,9 @@ int main()
   char estado1, estado2;
   char codigo1[4], codigo2[4];
   char nomeCidade1[50], nomeCidade2[50];
-  int populacao1, populacao2;
-  float area1, area2;
-  float pib1, pib2;
+  unsigned long int populacao1, populacao2;
+  double area1, area2;
+  double pib1, pib2;
   int pontosTuristicos1, pontosTuristicos2;
 
   // Leitura dos dados da primeira carta
@@ -76,9 +76,24 @@ int main()
 
   float densidadePopulacional1 = populacao1 / area1;
   float densidadePopulacional2 = populacao2 / area2;
+  float pibPerCapita1 = pib1 / populacao1;
+  float pibPerCapita2 = pib2 / populacao2;
 
   printf("\nDensidade Populacional da carta 1: %.2f", densidadePopulacional1);
   printf("\nDensidade populacional da carta 2: %.2f", densidadePopulacional2);
 
+  // Super poder
+  float superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCapita1 + (1.0 / densidadePopulacional1);
+  float superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapita2 + (1.0 / densidadePopulacional2);
+
+  // Comparações
+  printf("\nComparação de Cartas:\n");
+  printf("População: Carta 1 venceu (%d)\n", populacao1 > populacao2);
+  printf("Área: Carta 1 venceu (%d)\n", area1 > area2);
+  printf("PIB: Carta 1 venceu (%d)\n", pib1 > pib2);
+  printf("Pontos Turísticos: Carta 1 venceu (%d)\n", pontosTuristicos1 > pontosTuristicos2);
+  printf("Densidade Populacional: Carta 1 venceu (%d)\n", densidadePopulacional1 < densidadePopulacional2);
+  printf("PIB per Capita: Carta 1 venceu (%d)\n", pibPerCapita1 > pibPerCapita2);
+  printf("Super Poder: Carta 1 venceu (%d)\n", superPoder1 > superPoder2);
   return 0; // Retorna 0 para o sistema operacional
 }
